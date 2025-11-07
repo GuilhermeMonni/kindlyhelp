@@ -1,16 +1,27 @@
-# React + Vite
+KindlyHelp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚧 Projeto em desenvolvimento 🚧
 
-Currently, two official plugins are available:
+Este aplicativo é um sistema colaborativo para facilitar o acesso a serviços sociais gratuitos na comunidade local. Os usuários podem descobrir, cadastrar e avaliar serviços como assistência jurídica, apoio psicológico, distribuição de alimentos e capacitação, promovendo inclusão social e apoio às populações vulneráveis.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Funcionalidades Pretendidas
+Listagem e busca por serviços gratuitos próximos.
 
-## React Compiler
+Cadastro colaborativo de novos serviços com detalhes completos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Visualização dos serviços interativo.
 
-## Expanding the ESLint configuration
+Filtros por categoria e localidade para facilitar a navegação.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Status do Projeto
+O projeto ainda está em sua fase inicial, com várias funcionalidades em planejamento e implementação. É esperado encontrar bugs ou instabilidades.
+
+Tecnologias Utilizadas
+Frontend em React com Vite para rápido desenvolvimento.
+
+Back-end com Node.js e banco de dados PostgreSQL.
+
+Hospedagem planejada na plataforma Render.
+
+Como Contribuir
+Pull requests, sugestões e testes são sempre bem-vindos! Para colaborar, abra uma issue explicando sua ideia ou correção.
