@@ -1,13 +1,25 @@
 import ReactModal from "react-modal"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function PopupInitial(){
-    let [isOpen, setIsOpen] = useState(true)
+    let [isOpen, setIsOpen] = useState(false)
+
+    useEffect(() => {
+        //verify if user has seen popup
+        const verifyPopup = localStorage.getItem('popup')
+
+        if(!verifyPopup){
+            setIsOpen(true)
+        }
+    }, [])
 
     return (
         <ReactModal
         isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
+        onRequestClose={() => {
+            localStorage.setItem('popup', true)
+            setIsOpen(false)
+        }}
         style={{
             overlay: {
             backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -32,12 +44,16 @@ function PopupInitial(){
             </h3>
 
             <p className="text-sm leading-relaxed mb-5 text-justify indent-2 text-alternate">
-            Neste aplicativo temos o objetivo de divulgar serviços sociais gratuitos. Caso note que algum serviços não esteja listado aqui, e se sinta à vontade, pode anunciar o serviço que deseja anunciar, envie as
+            Neste aplicativo temos o objetivo de divulgar serviços sociais gratuitos. Caso note que algum serviço não esteja listado aqui, sinta-se à vontade para anunciar o projeto social que deseja, envie as
             informações clicando em 'serviços &rarr; criar serviço', nossa equipe irá analisar para aprovar o serviço. Obrigado.
             </p>
 
             <button
-            onClick={() => setIsOpen(false)}
+            onClick={() =>{ 
+                    setIsOpen(false)
+                    localStorage.setItem('popup', true)
+                }
+            }
             className="align-center px-5 py-2 rounded-md font-semibold text-white hover:opacity-90 transition"
             style={{
                 backgroundColor: "var(--color-secundary)",
