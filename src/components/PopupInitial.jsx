@@ -6,7 +6,7 @@ function PopupInitial(){
 
     useEffect(() => {
         //verify if user has seen popup
-        const verifyPopup = localStorage.getItem('popup')
+        const verifyPopup = sessionStorage.getItem('popup')
 
         if(!verifyPopup){
             setIsOpen(true)
@@ -17,7 +17,7 @@ function PopupInitial(){
         <ReactModal
         isOpen={isOpen}
         onRequestClose={() => {
-            localStorage.setItem('popup', true)
+            sessionStorage.setItem('popup', true)
             setIsOpen(false)
         }}
         style={{
@@ -51,7 +51,7 @@ function PopupInitial(){
             <button
             onClick={() =>{ 
                     setIsOpen(false)
-                    localStorage.setItem('popup', true)
+                    sessionStorage.setItem('popup', true)
                 }
             }
             className="align-center px-5 py-2 rounded-md font-semibold text-white hover:opacity-90 transition"
