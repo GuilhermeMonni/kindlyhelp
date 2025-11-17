@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import PopupInitial from "./PopupInitial"
 
 function Container(){
     const [services, setServices] = useState(null)
@@ -17,25 +18,28 @@ function Container(){
     if(loading) return <div>Carregando...</div>
 
     return(
-        <div className="m-0 bg-alternate w-full h-full p-0 flex flex-wrap justify-center">{
-                services.map((service) => (
-                    <div className="m-12 bg-card min-w-1/4 max-w-xs min-h-1/4 p-5 rounded-xl text-center shrink break-normal leading-relaxed" key={service.id}>
-                        <img className="w-1/10 m-0" src={service.img} alt="Logo service" />
-                        <h2 className="-mt-6 font-momo">{service.name}</h2>
-                        <h3 className="font-rubik mb-2">{service.service}</h3>
-                        <a href={
-                            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(service.address)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-rubik text-deep hover:underline hover:text-secundary"
-                        >{service.address}</a>
-                        <p className="font-rubik m-1">Fone: {service.cell}</p>
-                        <p className="font-rubik m-1">E-mail: {service.email}</p>
-                        <p className="font-rubik">Aberto de {service.hour}</p>
-                    </div>
-                ))
-                }
-        </div>
+        <>
+            <PopupInitial />
+            <div className="m-0 bg-alternate w-full h-full p-0 flex flex-wrap justify-center">{
+                    services.map((service) => (
+                        <div className="m-12 bg-card min-w-1/4 max-w-xs min-h-1/4 p-5 rounded-xl text-center shrink break-normal leading-relaxed" key={service.id}>
+                            <img className="w-1/10 m-0" src={service.img} alt="Logo service" />
+                            <h2 className="-mt-6 font-momo">{service.name}</h2>
+                            <h3 className="font-rubik mb-2">{service.service}</h3>
+                            <a href={
+                                `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(service.address)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-rubik text-deep hover:underline hover:text-secundary"
+                            >{service.address}</a>
+                            <p className="font-rubik m-1">Fone: {service.cell}</p>
+                            <p className="font-rubik m-1">E-mail: {service.email}</p>
+                            <p className="font-rubik">Aberto de {service.hour}</p>
+                        </div>
+                    ))
+                    }
+            </div>
+        </>
     )
 }
 
