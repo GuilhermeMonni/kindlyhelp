@@ -11,9 +11,10 @@ function Header(){
             text: "Neste aplicativo temos o objetivo de divulgar serviços sociais gratuitos. Caso note que algum serviço não esteja listado aqui, sinta-se à vontade para anunciar o projeto social que deseja, envie as informações clicando em 'Enviar serviço', nossa equipe irá analisar para analisar as informações enviadas. Obrigado.",
             icon: "info",
             customClass:{
-                popup: '!bg-deep !border-detail !font-noto !max-w-1/2 !min-w-md !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
-                text: '!text-sm !leading-relaxed !mb-5 !text-justify !indent-2',
-                confirmButton: '!bg-secundary hover:!bg-primary hover:!text-deep !font-rubik !border-none'
+                popup: '!bg-deep !border-detail !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-3 !flex !flex-col !text-alternate !items-center !justify-center',
+                text: '!text-sm !leading-relaxed !mb-5 !text-justify',
+                confirmButton: '!bg-secundary hover:!bg-primary hover:!text-deep !font-rubik !border-none',
+                icon: '!mt-0 !w-10 !h-12 !text-xs'
             }
         })
     }
@@ -55,7 +56,7 @@ function Header(){
             confirmButtonText: 'Fechar',
             buttonsStyling: false,
             customClass: {
-            popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-md !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
+            popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
             confirmButton: '!bg-secundary hover:!bg-primary hover:!text-deep !font-rubik !font-bold !border-none !py-3 !px-2 !rounded-xl !mt-6 !transition-all'
             }
         });

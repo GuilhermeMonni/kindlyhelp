@@ -18,7 +18,7 @@ function Container(){
 
     if(loading){
         return <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex flex-col items-center justify-center z-50">
-            <div className="flex justify-center items-center">
+            <div className="my-auto mx-auto">
                 <LineWave
                     visible={true}
                     height="120"
