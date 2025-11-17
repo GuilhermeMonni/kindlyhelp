@@ -17,8 +17,7 @@ function Container(){
     if(loading) return <div>Carregando...</div>
 
     return(
-        <main className="bg-alternate w-full h-full">
-            <div className="m-0 bg-alternate w-full h-full p-0 flex flex-wrap justify-center">{
+        <div className="m-0 bg-alternate w-full h-full p-0 flex flex-wrap justify-center">{
                 services.map((service) => (
                     <div className="m-12 bg-card min-w-1/4 max-w-xs min-h-1/4 p-5 rounded-xl text-center shrink break-normal leading-relaxed" key={service.id}>
                         <img className="w-1/10 m-0" src={service.img} alt="Logo service" />
@@ -36,8 +35,7 @@ function Container(){
                     </div>
                 ))
                 }
-            </div>
-        </main>
+        </div>
     )
 }
 
