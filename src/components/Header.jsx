@@ -2,11 +2,103 @@ import Swal from "sweetalert2"
 import PopupInitial from "./PopupInitial"
 
 function Header(){
-    /*popups
-    function sendInfos(){//send data services
-
-    }*/
-    function about(){//about pag
+    //popups
+    async function sendInfos(){//send data services
+        const { value: formValues } = await Swal.fire({
+            title: "Ajuda social",
+            html: `
+                <form class="text-left space-y-5 p-4">
+                    <div class="relative">
+                        <input name="name" type="text" 
+                        id="name" 
+                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        placeholder=" "
+                        />
+                        <label 
+                        for="name" 
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                        Nome da unidade
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input name="services" type="text" id="services" 
+                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        placeholder=" "
+                        />
+                        <label 
+                        for="services" 
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                        Serviços prestados
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input name="address" type="text" 
+                        id="address" 
+                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        placeholder=" "
+                        />
+                        <label 
+                        for="address" 
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                        Endereço
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input name="cell" type="tel" 
+                        id="cell" 
+                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        placeholder=" "
+                        />
+                        <label 
+                        for="cell" 
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                        Telefone para contato
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input name="email" type="email" 
+                        id="email" 
+                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        placeholder=" "
+                        />
+                        <label 
+                        for="email" 
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        >
+                        E-mail para contato
+                        </label>
+                    </div>
+                </form>
+            </div>
+            `,
+            focusConfirm: false,
+            confirmButtonText: "Enviar",
+            buttonsStyling: false,
+            customClass: {
+                popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
+                text: '!text-2xl !font-momo w-1/4 !text-center !text-alternate !mb-4',
+                confirmButton: '!bg-secundary hover:!bg-primary hover:!text-deep !font-rubik !font-bold !border-none !py-3 !px-2 !rounded-xl !mt-6 !transition-all'
+            },
+            preConfirm: () => {
+                return [
+                document.getElementById("name").target.value,
+                document.getElementById("service").target.value,
+                document.getElementById("address").target.value,
+                document.getElementById("cell").target.value,
+                document.getElementById("email").target.value,
+                document.getElementById("hour").target.value,
+                ];
+            }
+            })
+        if (formValues) {
+            Swal.fire(JSON.stringify(formValues));
+        }
+    }
+    function about(){//about popup
         Swal.fire({
             text: "Neste aplicativo temos o objetivo de divulgar serviços sociais gratuitos. Caso note que algum serviço não esteja listado aqui, sinta-se à vontade para anunciar o projeto social que deseja, envie as informações clicando em 'Enviar serviço', nossa equipe irá analisar para analisar as informações enviadas. Obrigado.",
             icon: "info",
@@ -18,7 +110,7 @@ function Header(){
             }
         })
     }
-    function network(){ //networks
+    function network(){ //networks popup
         Swal.fire({
             html: `
             <div class="text-left">
@@ -56,8 +148,8 @@ function Header(){
             confirmButtonText: 'Fechar',
             buttonsStyling: false,
             customClass: {
-            popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
-            confirmButton: '!bg-secundary hover:!bg-primary hover:!text-deep !font-rubik !font-bold !border-none !py-3 !px-2 !rounded-xl !mt-6 !transition-all'
+                popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
+                confirmButton: '!bg-secundary hover:!bg-primary hover:!text-deep !font-rubik !font-bold !border-none !py-3 !px-2 !rounded-xl !mt-6 !transition-all'
             }
         });
     }
@@ -68,7 +160,7 @@ function Header(){
                 <img src="/images/logo-app.png" alt="Imagem logo app." className="rounded-full max-h-24 max-w-32" />
                 <nav>
                     <ul className="inline-flex mt-5 gap-2 text-gray-100 *:cursor-pointer *:hover:text-primary *:duration-150 *:font-rubik">
-                        <li>Enviar serviço</li>
+                        <li onClick={sendInfos}>Enviar serviço</li>
                         <li><a href="https://github.com/GuilhermeMonni/kindlyhelp" target="_blank" rel="noopener noreferrer">Github</a></li>
                         <li onClick={about}>Sobre</li>
                         <li onClick={network}>Redes</li>
