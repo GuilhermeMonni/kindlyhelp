@@ -85,13 +85,12 @@ function Header(){
             },
             preConfirm: () => {
                 return [
-                document.getElementById("name").target.value,
-                document.getElementById("service").target.value,
-                document.getElementById("address").target.value,
-                document.getElementById("cell").target.value,
-                document.getElementById("email").target.value,
-                document.getElementById("hour").target.value,
-                ];
+                document.getElementById("name").value,
+                document.getElementById("services").value,
+                document.getElementById("address").value,
+                document.getElementById("cell").value,
+                document.getElementById("email").value
+                ]
             }
             })
         if (formValues) {
