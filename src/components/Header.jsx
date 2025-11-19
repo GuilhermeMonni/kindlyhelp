@@ -1,13 +1,12 @@
 import Swal from "sweetalert2"
-import PopupInitial from "./PopupInitial"
 
 function Header(){
     //popups
     async function sendInfos(){//send data services
-        const { value: formValues } = await Swal.fire({
+        await Swal.fire({ //form popup
             title: "Ajuda social",
             html: `
-                <form class="text-left space-y-5 p-4">
+                <form id="serviceForm" class="text-left space-y-5 p-4">
                     <div class="relative">
                         <input name="name" type="text" 
                         id="name" 
@@ -73,28 +72,66 @@ function Header(){
                         </label>
                     </div>
                 </form>
-            </div>
             `,
             focusConfirm: false,
             confirmButtonText: "Enviar",
-            buttonsStyling: false,
             customClass: {
                 popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
-                text: '!text-2xl !font-momo w-1/4 !text-center !text-alternate !mb-4',
-                confirmButton: '!bg-secundary hover:!bg-primary hover:!text-deep !font-rubik !font-bold !border-none !py-3 !px-2 !rounded-xl !mt-6 !transition-all'
+                text: '!text-2xl !font-momo w-1/4 !text-center !text-alternate !mb-4'
             },
-            preConfirm: () => {
-                return [
-                document.getElementById("name").value,
-                document.getElementById("services").value,
-                document.getElementById("address").value,
-                document.getElementById("cell").value,
-                document.getElementById("email").value
-                ]
+            didOpen:() => {
+                const form = document.getElementById('serviceForm')
+                if(form){
+                    form.addEventListener('keydown', (e) => {
+                        if(e.key === 'Enter'){
+                            e.preventDefault()
+                            Swal.clickConfirm()
+                        }
+                    })
+                }
+            },
+            preConfirm: async () => {
+                const name = document.getElementById('name').value
+                const services = document.getElementById('services').value
+                const address = document.getElementById('address').value
+                const cell = document.getElementById('cell').value
+                const email = document.getElementById('email').value
+
+                if(name == '' || services == '' || address == '' || cell == '' || email == ''){
+                    Swal.fire({
+                        text: 'Deixou algum campo em branco, deseja enviar mesmo assim?',
+                        confirmButtonText: 'Enviar',
+                        preConfirm: async () => {
+                            return await sendData(name, services, address, cell, email)
+                        }
+                    })
+                    return 
+                }
+
+                return await sendData(name, services, address, cell, email)
             }
-            })
-        if (formValues) {
-            Swal.fire(JSON.stringify(formValues));
+        })
+
+        async function sendData(name, services, address, cell, email){
+            const url = 'https://kindlyhelp-services.onrender.com/send'
+
+            try{
+                fetch(url, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name, services, address, cell, email
+                    })
+                })
+                .then(async(res) => {
+                    const data = res.json()
+                    return data
+                })
+            }catch(error){
+                console.error(error)
+            }
         }
     }
     function about(){//about popup
