@@ -10,24 +10,24 @@ function Header(){
                     <div class="relative">
                         <input name="name" type="text" 
                         id="name" 
-                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        class="peer w-full px-4 pt-4 pb-2 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
                         placeholder=" "
                         />
                         <label 
                         for="name" 
-                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
                         >
                         Nome da unidade
                         </label>
                     </div>
                     <div class="relative">
                         <input name="services" type="text" id="services" 
-                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        class="peer w-full px-4 pt-4 pb-2 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
                         placeholder=" "
                         />
                         <label 
                         for="services" 
-                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
                         >
                         Serviços prestados
                         </label>
@@ -35,12 +35,12 @@ function Header(){
                     <div class="relative">
                         <input name="address" type="text" 
                         id="address" 
-                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        class="peer w-full px-4 pt-4 pb-2 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
                         placeholder=" "
                         />
                         <label 
                         for="address" 
-                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
                         >
                         Endereço
                         </label>
@@ -48,12 +48,12 @@ function Header(){
                     <div class="relative">
                         <input name="cell" type="tel" 
                         id="cell" 
-                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        class="peer w-full px-4 pt-4 pb-2 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
                         placeholder=" "
                         />
                         <label 
                         for="cell" 
-                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
                         >
                         Telefone para contato
                         </label>
@@ -61,12 +61,12 @@ function Header(){
                     <div class="relative">
                         <input name="email" type="email" 
                         id="email" 
-                        class="peer w-full px-4 py-4 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
+                        class="peer w-full px-4 pt-4 pb-2 bg-detail text-alternate rounded-lg border border-secundary focus:border-primary outline-none transition-all"
                         placeholder=" "
                         />
                         <label 
                         for="email" 
-                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-1 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-base text-secundary pointer-events-none transition-all duration-200 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary"
                         >
                         E-mail para contato
                         </label>
