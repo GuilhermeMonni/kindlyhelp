@@ -6,7 +6,8 @@ function Header(){
         await Swal.fire({ //form popup
             title: "Ajuda social",
             html: `
-                <form id="serviceForm" class="text-left space-y-5 p-4">
+               <form id="serviceForm" class="relative text-left space-y-5 p-4">
+                    
                     <div class="relative">
                         <input name="name" type="text" 
                         id="name" 
@@ -75,9 +76,11 @@ function Header(){
             `,
             focusConfirm: false,
             confirmButtonText: "Enviar",
+            showCloseButton: true,
             customClass: {
                 popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
-                text: '!text-2xl !font-momo w-1/4 !text-center !text-alternate !mb-4'
+                text: '!text-2xl !font-momo w-1/4 !text-center !text-alternate !mb-4',
+                closeButton: '!bg-red-600 !text-alternate !border-0 !rounded-full !text-xl hover:!scale-100',
             },
             didOpen:() => {
                 const form = document.getElementById('serviceForm')
