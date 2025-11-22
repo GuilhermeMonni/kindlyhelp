@@ -80,7 +80,7 @@ function Header(){
             customClass: {
                 popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
                 text: '!text-2xl !font-momo w-1/4 !text-center !text-alternate !mb-4',
-                closeButton: '!bg-red-600 !text-alternate !border-0 !rounded-full !text-xl hover:!scale-100',
+                closeButton: '!text-red-600 !text-xl hover:!bg-red-600 hover:!text-black',
             },
             didOpen:() => {
                 const form = document.getElementById('serviceForm')
@@ -104,6 +104,13 @@ function Header(){
                     Swal.fire({
                         text: 'Deixou algum campo em branco, deseja enviar mesmo assim?',
                         confirmButtonText: 'Enviar',
+                        focusConfirm: false,
+                        showCloseButton: true,customClass: {
+                        popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
+                        text: '!text-xl !my-2 !font-momo w-1/4 !text-center !text-alternate !mb-4',
+                        closeButton: '!text-red-600 !text-xl hover:!bg-red-600 hover:!text-black',
+                        confirmButton: '!h-4/5 !text-base'
+                        },
                         preConfirm: async () => {
                             return await sendData(name, services, address, cell, email)
                         }
