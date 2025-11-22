@@ -35,10 +35,11 @@ function Container(){
             <PopupInitial />
             <div className="m-0 bg-alternate w-full h-full p-0 flex flex-wrap justify-center">{
                 services.map((service) => (
-                        <div className="m-12 bg-card min-w-1/4 max-w-xs min-h-1/4 p-5 rounded-xl text-center shrink break-normal leading-relaxed" key={service.id}>
+                        <div className="m-12 bg-card lg:min-w-1/4 lg:max-w-xs min-w-10/12 min-h-1/3 p-6 rounded-xl text-center shrink break-normal leading-relaxed shadow-sm shadow-detail" key={service.id}>
                             <img className="w-1/10 m-0" src={service.img} alt="Logo service" />
-                            <h2 className="-mt-6 font-momo">{service.name}</h2>
+                            <h2 className="-mt-7 font-momo">{service.name}</h2>
                             <h3 className="font-rubik mb-2">{service.service}</h3>
+                            <span className="w-full block border-b border-deep mb-2"></span>
                             <a href={
                                 `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(service.address)}`}
                                 target="_blank"
