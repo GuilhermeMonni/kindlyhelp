@@ -164,27 +164,27 @@ function Header(){
                 <ul class="space-y-3">
                 <li>
                     <a href="https://www.instagram.com/monni.05/#" target="_blank" rel="noopener noreferrer" class="font-rubik text-alternate hover:underline hover:text-secundary flex items-center gap-2">
-                        <img src="../public/images/instagram.png" alt="Logo instagram">Instagram
+                        <img src="https://res.cloudinary.com/dzbdewkbp/image/upload/v1764027631/instagram_fvl9qu.png" alt="Logo instagram">Instagram
                     </a>
                 </li>
                 <li>
                     <a href="https://github.com/GuilhermeMonni" target="_blank" rel="noopener noreferrer" class="font-rubik text-alternate hover:underline hover:text-secundary flex items-center gap-2">
-                        <img src="../public/images/github.png" alt="Logo github">GitHub
+                        <img src="https://res.cloudinary.com/dzbdewkbp/image/upload/v1764027626/github_tpdilh.png" alt="Logo github">GitHub
                     </a>
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/guilherme-monni-a542a9244/" target="_blank" rel="noopener noreferrer" class="font-rubik text-alternate hover:underline hover:text-secundary flex items-center gap-2">
-                        <img src="../public/images/linkedin.png" alt="Logo linkedin">Linkedin
+                        <img src="https://res.cloudinary.com/dzbdewkbp/image/upload/v1764027632/linkedin_vsxe69.png" alt="Logo linkedin">Linkedin
                     </a>
                 </li>
                 <li>
                     <a href="https://culturaeduca.cc/" target="_blank" rel="noopener noreferrer" class="font-rubik text-alternate hover:underline hover:text-secundary flex items-center gap-2">
-                        <img src="../public/images/links.png" alt="Logo links">Cultura Educa
+                        <img src="https://res.cloudinary.com/dzbdewkbp/image/upload/v1764027631/links_xds4o2.png" alt="Logo links">Cultura Educa
                     </a>
                 </li>
                 <li>
                     <a href="https://www.rs.gov.br/busca-integrada?palavraschave=servi%C3%A7os+sociais&scopes=rs&q=servi%C3%A7os+sociais" target="_blank" rel="noopener noreferrer" class="font-rubik text-alternate hover:underline hover:text-secundary flex items-center gap-2">
-                        <img src="../public/images/links.png" alt="Logo links">Portal de serviços sociais
+                        <img src="https://res.cloudinary.com/dzbdewkbp/image/upload/v1764027631/links_xds4o2.png" alt="Logo links">Portal de serviços sociais
                     </a>
                 </li>
                 </ul>
