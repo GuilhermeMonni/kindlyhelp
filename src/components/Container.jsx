@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import PopupInitial from "./PopupInitial"
-import { LineWave } from "react-loader-spinner"
+import { Hourglass } from "react-loader-spinner"
 
 function Container(){
     const [services, setServices] = useState(null)
@@ -17,16 +17,16 @@ function Container(){
     }, [])
 
     if(loading){
-        return <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex flex-col items-center justify-center z-50">
-            <div className="my-auto mx-auto">
-                <LineWave
-                    visible={true}
-                    height="120"
-                    width="120"
-                    color="#18b7be"
-                    ariaLabel="line-wave-loading"
-                />
-            </div>
+        return <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center">
+            <Hourglass
+                visible={true}
+                height="50"
+                width="50"
+                ariaLabel="hourglass-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                colors={['#222831', '#18b7be']}
+            />
         </div>
     }
 

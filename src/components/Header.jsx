@@ -152,7 +152,7 @@ function Header(){
                 popup: '!bg-deep !border-detail !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-3 !flex !flex-col !text-alternate !items-center !justify-center',
                 text: '!text-sm !leading-relaxed !mb-5 !text-justify',
                 confirmButton: '!bg-secundary hover:!bg-primary hover:!text-deep !font-rubik !border-none',
-                icon: '!mt-0 !w-10 !h-12 !text-xs'
+                icon: '!mt-0 !w-11 !h-11 !text-xs'
             }
         })
     }
