@@ -1,4 +1,6 @@
 import Swal from "sweetalert2"
+import { ToastContainer, toast, Bounce } from "react-toastify"
+import { LineWave } from "react-loader-spinner"
 
 function Header(){
     //popups
@@ -100,32 +102,29 @@ function Header(){
                 const cell = document.getElementById('cell').value
                 const email = document.getElementById('email').value
 
-                if(name == '' || services == '' || address == '' || cell == '' || email == ''){
-                    Swal.fire({
-                        text: 'Deixou algum campo em branco, deseja enviar mesmo assim?',
-                        confirmButtonText: 'Enviar',
-                        focusConfirm: false,
-                        showCloseButton: true,customClass: {
-                        popup: '!bg-deep !border-none !font-noto !max-w-1/2 !min-w-90 !mx-auto !rounded-xl !shadow-xl !border !p-6 !flex !flex-col !text-alternate',
-                        text: '!text-xl !my-2 !font-momo w-1/4 !text-center !text-alternate !mb-4',
-                        closeButton: '!text-red-600 !text-xl hover:!bg-red-600 hover:!text-black',
-                        confirmButton: '!h-4/5 !text-base'
-                        },
-                        preConfirm: async () => {
-                            return await sendData(name, services, address, cell, email)
-                        }
-                    })
-                    return 
-                }
-
                 return await sendData(name, services, address, cell, email)
             }
         })
 
         async function sendData(name, services, address, cell, email){
+            if(name == '' || services == '' || address == '' || cell == '' || email == ''){
+                toast.error('Preencha todos os campos!', {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                        transition: Bounce,
+                })
+                return sendInfos()
+            }
+
             const url = 'https://kindlyhelp-services.onrender.com/send'
 
-            try{
+            return toast.promise(
                 fetch(url, {
                     method: "POST",
                     headers: {
@@ -138,10 +137,28 @@ function Header(){
                 .then(async(res) => {
                     const data = res.json()
                     return data
-                })
-            }catch(error){
-                console.error(error)
-            }
+                }),
+                {
+                    pending: {
+                        render: 'Enviando dados...',
+                        icon: <LineWave
+                                visible={true}
+                                height="30"
+                                width="30"
+                                color="#18b7be"
+                                ariaLabel="line-wave-loading"
+                            />
+                    },
+                    success: {
+                        render: 'Serviço enviado com sucesso!',
+                        icon: '✅'
+                    },
+                    error: {
+                        render: 'Erro ao enviar informações.',
+                        icon: '❌'
+                    }
+                }
+            )
         }
     }
     function about(){//about popup
@@ -213,6 +230,19 @@ function Header(){
                     </ul>
                 </nav>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Bounce}
+            />
         </>
     )
 }
