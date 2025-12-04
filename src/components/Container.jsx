@@ -40,9 +40,9 @@ function Container(){
     return(
         <>
             <PopupInitial />
-            <div className="w-1/3 mt-3 -mb-4 mx-auto relative">
+            <div className="min-w-43 w-1/3 mt-3 -mb-4 mx-auto relative">
                 <img className="absolute -left-7 top-1/2 transform -translate-y-1/2 h-5 w-5" src="https://res.cloudinary.com/dzbdewkbp/image/upload/v1764890545/lupa_bzy1vx.png" alt="Imagem lupa" />
-                <input className="border border-card w-3/3 p-2 mx-auto block rounded-full focus:outline-none focus:border-deep" type="text" value={search} placeholder="Busque algum serviço, como: acolhimento, alimento, diversos..." onChange={(e) => setSearch(e.target.value)}/> 
+                <input className="border border-card w-full p-2 mx-auto block rounded-full focus:outline-none focus:border-deep" type="text" value={search} placeholder="Busque algum serviço, como: acolhimento, alimento, diversos..." onChange={(e) => setSearch(e.target.value)}/> 
             </div>
             
             <div className="m-0 bg-transparent w-full h-full p-0 flex flex-wrap justify-center">   
