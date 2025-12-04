@@ -5,9 +5,9 @@ import { Hourglass } from "react-loader-spinner"
 function Container(){
     const [services, setServices] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [search, setSearch] = useState('')
 
-    useEffect(() => {
-        //serach services
+    useEffect(() => {//search services
         fetch('https://kindlyhelp-services.onrender.com/search')
             .then(res => res.json())
             .then(data => {
@@ -16,7 +16,7 @@ function Container(){
             })
     }, [])
 
-    if(loading){
+    if(loading){ //animation loading
         return <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center">
             <Hourglass
                 visible={true}
@@ -30,11 +30,24 @@ function Container(){
         </div>
     }
 
+    const servicesFilter = services.filter((service) => { //filter services 
+        const serviceFilter = service.service.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "") //clear string 
+
+        return serviceFilter.includes(search)
+    }
+    )
+
     return(
         <>
             <PopupInitial />
-            <div className="m-0 bg-alternate w-full h-full p-0 flex flex-wrap justify-center">{
-                services.map((service) => (
+            <div className="w-1/3 mt-3 -mb-4 mx-auto relative">
+                <img className="absolute -left-7 top-1/2 transform -translate-y-1/2 h-5 w-5" src="https://res.cloudinary.com/dzbdewkbp/image/upload/v1764890545/lupa_bzy1vx.png" alt="Imagem lupa" />
+                <input className="border border-card w-3/3 p-2 mx-auto block rounded-full focus:outline-none focus:border-deep" type="text" value={search} placeholder="Busque algum serviço, como: acolhimento, alimento, diversos..." onChange={(e) => setSearch(e.target.value)}/> 
+            </div>
+            
+            <div className="m-0 bg-transparent w-full h-full p-0 flex flex-wrap justify-center">   
+            {
+                servicesFilter.map((service) => (
                         <div className="m-12 bg-card lg:min-w-1/4 lg:max-w-xs min-w-10/12 min-h-1/3 p-6 rounded-xl text-center shrink break-normal leading-relaxed shadow-sm shadow-detail" key={service.id}>
                             <img className="w-1/10 m-0" src={service.img} alt="Logo service" />
                             <h2 className="-mt-7 font-momo">{service.name}</h2>
