@@ -31,9 +31,10 @@ function Container(){
     }
 
     const servicesFilter = services.filter((service) => { //filter services 
-        const serviceFilter = service.service.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "") //clear string 
+        const serviceFilter = service.service.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "") //clear string service
+        const searchString = search.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "") //clear string search
 
-        return serviceFilter.includes(search)
+        return serviceFilter.includes(searchString)
     }
     )
 
