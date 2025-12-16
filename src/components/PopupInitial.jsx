@@ -44,7 +44,7 @@ function PopupInitial(){
             </h3>
 
             <p className="text-sm leading-relaxed mb-5 text-justify indent-2 text-alternate">
-            Neste aplicativo temos o objetivo de divulgar serviços sociais gratuitos. Caso note que algum serviço não esteja listado aqui, sinta-se à vontade para anunciar o projeto social que deseja, envie as
+            Neste website temos o objetivo de divulgar serviços sociais gratuitos. Caso note que algum serviço não esteja listado aqui, sinta-se à vontade para anunciar o projeto social que deseja, envie as
             informações clicando em 'Enviar serviço', nossa equipe irá analisar as informações enviadas. Obrigado.
             </p>
 
