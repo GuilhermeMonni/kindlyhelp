@@ -2,7 +2,7 @@
 
 ###
 
-Este aplicativo é um sistema colaborativo para facilitar o acesso a serviços sociais gratuitos na comunidade local. Os usuários podem descobrir e cadastrar serviços. Se trata de um projeto para uma atividade extensionista, promovendo inclusão social e apoio às populações vulneráveis.
+Este site é um sistema colaborativo para facilitar o acesso a serviços sociais gratuitos na comunidade local. Os usuários podem descobrir e cadastrar serviços. Se trata de um projeto para uma atividade extensionista, promovendo inclusão social e apoio às populações vulneráveis.
 
 ###
 
